@@ -282,7 +282,7 @@
         </div>
         <textarea class="key" placeholder="1 = A\n..."></textarea>
         <button class="checkAns">Check Answers</button>
-        <table><thead><tr><th>#</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead><tbody></tbody></table>
+        <table><thead><tr><th>#</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr></thead><tbody></tbody></table>
         <div class="output"></div>
       `;
       document.getElementById('sections').appendChild(sec);
@@ -376,7 +376,7 @@
         const idx = tbody.children.length + 1;
         const tr = document.createElement('tr');
         let cells = `<td>${idx}</td>`;
-        ['A', 'B', 'C', 'D'].forEach(l => {
+        ['A', 'B', 'C', 'D', 'E'].forEach(l => {
           cells += `<td><label><input type="radio" name="${sectionId}_q${idx}" value="${l}"></label></td>`;
         });
         tr.innerHTML = cells;
@@ -395,7 +395,7 @@
         if (parts.length === 2) {
           const num = parseInt(parts[0]);
           const ans = parts[1].toUpperCase();
-          if (['A', 'B', 'C', 'D'].includes(ans)) key[num] = ans;
+          if (['A', 'B', 'C', 'D', 'E'].includes(ans)) key[num] = ans;
         }
       });
       return key;
